@@ -34,4 +34,5 @@ steps:
     testResultsFiles: outputxunit.xml
     searchFolder: 'D:\a\1\s\'
     condition: succeededOrFailed()
+    publishRunAttachments: true
   displayName: 'Publish Test Results outputxunit.xml'
