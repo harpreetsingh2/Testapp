@@ -26,10 +26,5 @@ steps:
     pip install robotframework-selenium2library
   displayName: 'Install dependencies'
 
-- script: |
-    pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
-
 - powershell:  robot --pythonpath . testcase.robot    
   displayName: 'runrobotscript'
