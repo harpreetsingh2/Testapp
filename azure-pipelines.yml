@@ -28,3 +28,10 @@ steps:
 
 - powershell:  robot --pythonpath . -x outputxunit.xml testcase.robot.
   displayName: 'runrobotscript'
+
+- task: PublishTestResults@2
+inputs:
+testResultsFiles: outputxunit.xml
+searchFolder: 'D:\a\1\s\'
+condition: succeededOrFailed()
+displayName: 'Publish Test Results outputxunit.xml'
