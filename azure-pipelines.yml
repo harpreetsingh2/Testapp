@@ -24,10 +24,13 @@ steps:
     pip install -r requirements.txt
     pip install robotframework
     pip install robotframework-selenium2library
+    pip install bzt
+    python -m pip install flake8
+    flake8 .
   displayName: 'Install dependencies'
 
-- powershell:  robot --pythonpath . -x outputxunit.xml testcase.robot.
-  displayName: 'runrobotscript'
+- powershell:  bzt Performance.yml
+  displayName: 'runperformance'
 
 - task: PublishTestResults@2
   inputs:
