@@ -24,6 +24,14 @@ scenarios:
           name: primary
           value:  Webshop_Id
 reporting:
+- module: blazemeter
+  token: a74cd31f94247b69a1193855:0b0a3d4043012af6d355f7f12409c06ab3a777c5bdb45273cb923dbdea322f209af56baa
+  report-name: AH API Performance Test
+  test: perftest
+  project: AH
+- module: junit-xml
+  filename: outputxunit.xml
+  data-source: sample-labels
 - module: console
 - module: final-stats
   summary: true  # overall samples count and percent of failures
@@ -31,8 +39,3 @@ reporting:
   failed-labels: true  # provides list of sample labels with failures
   test-duration: true  # provides test duration
   dump-csv: /Users/harpreetsingh/Documents/PoR/PerformanceTests/Portmaps_perf_result_csv.csv
-- module: blazemeter
-  token: a74cd31f94247b69a1193855:59edbf557f70fb94c0c41590a17bf82e67c269c3a850e2fc4dd7e00a442ccf3549e67394
-  report-name: AH API Performance Test
-  test: perftest
-  project: AH
