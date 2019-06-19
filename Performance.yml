@@ -23,15 +23,6 @@ scenarios:
         identifiers:
           name: primary
           value:  Webshop_Id
-    - label: Test Performance Dual Key
-        method: POST
-        url: https://weeu-s05-tst-ams-dspublisherapi-01.azure-api.net/DataScience/V2
-        body:
-          sessionId:  singlekey
-          modelName:  0.0.1
-          identifiers:
-            name: primary
-            value:  Webshop_Id
 reporting:
 - module: console
 - module: final-stats
