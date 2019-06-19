@@ -32,7 +32,7 @@ reporting:
   test-duration: true  # provides test duration
   dump-csv: /Users/harpreetsingh/Documents/PoR/PerformanceTests/Portmaps_perf_result_csv.csv
 - module: blazemeter
-  token: '0c48ad1b288e4075a953db21:bb24df9c401a263fcec9a28519aa30f9f49b2190578717d2bd8487448cea2aeb31422a56'
-  report-name: Portmaps_perftest_report
+  token: a74cd31f94247b69a1193855:59edbf557f70fb94c0c41590a17bf82e67c269c3a850e2fc4dd7e00a442ccf3549e67394
+  report-name: AH API Performance Test
   test: perftest
   project: AH
