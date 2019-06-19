@@ -1,0 +1,47 @@
+---
+
+execution:
+- concurrency: 50
+  hold-for: 1m
+  ramp-up: 20s
+  scenario: perftest
+scenarios:
+  perftest:
+    headers:
+     Content-Type: application/json
+     Host: weeu-s05-tst-ams-dspublisherapi-01.azure-api.net
+     Origin: https://weeu-s05-tst-ams-dspublisherapi-01.azure-api.net/DataScience/V2
+     Referer: https://weeu-s05-tst-ams-dspublisherapi-01.azure-api.net/DataScience/V2
+     Ocp-Apim-Subscription-Key: d733e00132234a52977a12a705a9ed28
+    requests:
+    - label: Test Performance Singlekey
+      method: POST
+      url: https://weeu-s05-tst-ams-dspublisherapi-01.azure-api.net/DataScience/V2
+      body:
+        sessionId:  singlekey
+        modelName:  0.0.1
+        identifiers:
+          name: primary
+          value:  Webshop_Id
+    - label: Test Performance Dual Key
+        method: POST
+        url: https://weeu-s05-tst-ams-dspublisherapi-01.azure-api.net/DataScience/V2
+        body:
+          sessionId:  singlekey
+          modelName:  0.0.1
+          identifiers:
+            name: primary
+            value:  Webshop_Id
+reporting:
+- module: console
+- module: final-stats
+  summary: true  # overall samples count and percent of failures
+  percentiles: true  # display average times and percentiles
+  failed-labels: true  # provides list of sample labels with failures
+  test-duration: true  # provides test duration
+  dump-csv: /Users/harpreetsingh/Documents/PoR/PerformanceTests/Portmaps_perf_result_csv.csv
+- module: blazemeter
+  token: '0c48ad1b288e4075a953db21:bb24df9c401a263fcec9a28519aa30f9f49b2190578717d2bd8487448cea2aeb31422a56'
+  report-name: Portmaps_perftest_report
+  test: perftest
+  project: AH

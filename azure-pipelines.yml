@@ -24,8 +24,6 @@ steps:
     pip install robotframework
     pip install robotframework-selenium2library
     pip install bzt
-    python -m pip install flake8
-    flake8 .
   displayName: 'Install dependencies'
 
 - powershell:  bzt Performance.yml
